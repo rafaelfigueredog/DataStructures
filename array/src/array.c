@@ -16,7 +16,17 @@ Array* create (int size) {
 	return arr; 
 }
 
-void insert(Array* arr, int data) {
+int removeElement(Array* arr, int index) {
+	if (arr->n == 0) return 0; 
+	if ( index < 0 || index >= arr->n) return 0; 
+	arr->n--;
+	for (int i = index; i < arr->n; i++) {
+		arr->v[i] = arr->v[i+1]; 
+	}
+	return 1; 
+}
+
+void addElement(Array* arr, int data) {
 
 	if (arr->n == 0) {
 		arr->v[arr->n] = data; 

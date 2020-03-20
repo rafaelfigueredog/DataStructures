@@ -9,7 +9,9 @@ typedef struct arraylist {
 
 Array* create(int size); 
 
-void insert(Array* arr, int data); 
+int removeElement(Array* arr, int index); 
+
+void addElement(Array* arr, int data); 
 
 int size(Array* arr); 
 
