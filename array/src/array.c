@@ -4,15 +4,15 @@
 
 #define MAX 100
 
-Array* create () {
+Array* criar () {
 	Array* arr = (Array*) malloc(sizeof(Array));
 	arr->size = 0;
-	arr->max = 100;
+	arr->max = 10;
 	arr->v = (int*) malloc(arr->max*sizeof(int));
 	return arr; 
 }
 
-int removeElement(Array* arr, int index) {
+int remover(Array* arr, int index) {
 	if (arr->size == 0) return 0; 
 	if ( index < 0 || index >= arr->size) return 0; 
 	arr->size--;
@@ -22,24 +22,14 @@ int removeElement(Array* arr, int index) {
 	return 1; 
 }
 
-void addElement(Array* arr, int data) {
-
-	if (arr->size == 0) {
-		arr->v[arr->size] = data; 
-		arr->size++; 
-		return;  
-	}
-
-	if (arr->size == arr->max) {
-		resize(arr);
-	}
-	int i = arr->size; 
-	arr->v[i] = data;
-	arr->size++; 
+void inserir(Array* arr, int data) {
+	if (arr->size == arr->max) realocar(arr);
+	arr->v[arr->size] = data; 
+	arr->size++;
 }
 
 
-int changeElement(Array *arr, int index, int value) { 
+int atualizar(Array *arr, int index, int value) { 
 	if ( index < 0 || index >= arr->size ) return 0; 
 	arr->v[index] = value; 
 	return 1;
@@ -49,23 +39,22 @@ int size(Array* arr) {
 	return arr->size;
 }
 
-int access(Array* arr, int index) {
+int get(Array* arr, int index) {
 	if (index >= 0 && index < arr->size) return arr->v[index];
 	else return -1; 
 }
 
-void resize(Array* arr) { 
+void realocar(Array* arr) { 
 	arr->max *= 2; 
 	arr->v = (int*) realloc(arr->v, arr->max*sizeof(int)); 
 }
 
-void printArray(Array* array) {
+void mostrar(Array* array) {
 	printf("[ "); 
 	for (int i = 0; i < array->size; i++) {
-		printf("%d ", access(array, i)); 
+		printf("%d ", get(array, i)); 
 	}
 	printf("]\n"); 
-
 } 
 
 

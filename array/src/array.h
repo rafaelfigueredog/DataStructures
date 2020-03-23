@@ -5,18 +5,19 @@ typedef struct array {
 } Array;
 
 
-Array* create(); 
+Array* criar(); 
 
-int removeElement(Array* arr, int index); 
+int remover(Array* arr, int index); 
 
-void addElement(Array* arr, int data); 
+int atualizar(Array *arr, int index, int value);
+
+void inserir(Array* arr, int data); 
+
+int get(Array* arr, int index);
 
 int size(Array* arr); 
 
-int access(Array* arr, int index);
+void mostrar(Array* arr); 
 
-void printArray(Array* arr); 
+void realocar(Array* arr); 
 
-void resize(Array* arr); 
-
-int changeElement(Array *arr, int index, int value);
