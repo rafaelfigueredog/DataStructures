@@ -1,11 +1,11 @@
 typedef struct array {
-	int n;
+	int size;
 	int max;
 	int *v;
-} Array ;
+} Array;
 
 
-Array* create(int size); 
+Array* create(); 
 
 int removeElement(Array* arr, int index); 
 

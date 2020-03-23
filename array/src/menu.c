@@ -37,7 +37,7 @@ void menuArray() {
             break; 
         
         case 1: 
-            if (array == NULL) array = create(0); 
+            if (array == NULL) array = create(); 
             break;
         case 2: 
             printf("\nElemento: ");
