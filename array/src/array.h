@@ -1,6 +1,4 @@
-
-
-typedef struct arraylist {
+typedef struct array {
 	int n;
 	int max;
 	int *v;
