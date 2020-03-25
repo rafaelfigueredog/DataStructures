@@ -29,7 +29,7 @@ void inserir(Array* arr, int data) {
 }
 
 
-int atualizar(Array *arr, int index, int value) { 
+int set(Array *arr, int index, int value) { 
 	if ( index < 0 || index >= arr->size ) return 0; 
 	arr->v[index] = value; 
 	return 1;

@@ -9,9 +9,9 @@ Array* criar();
 
 int remover(Array* arr, int index); 
 
-int atualizar(Array *arr, int index, int value);
-
 void inserir(Array* arr, int data); 
+
+int set(Array *arr, int index, int value);
 
 int get(Array* arr, int index);
 
