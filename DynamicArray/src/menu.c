@@ -50,7 +50,7 @@ void menuArray() {
         case 3: 
             printf("\nindex: "); 
             scanf("%d", &i); 
-            pop(array, i); 
+            erase(array, i); 
             break;
         case 4: 
             printf("index: ");

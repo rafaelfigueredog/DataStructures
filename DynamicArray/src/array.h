@@ -9,7 +9,7 @@ Array* create();
 
 void pushback(Array* arr, int data); 
 
-int pop(Array* arr, int index); 
+int erase(Array* arr, int index); 
 
 int set(Array *arr, int index, int value);
 

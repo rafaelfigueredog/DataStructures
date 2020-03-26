@@ -12,7 +12,7 @@ Array* create() {
 	return arr; 
 }
 
-int pop(Array* arr, int index) {
+int erase(Array* arr, int index) {
 	if (arr->size == 0) return 0; 
 	if ( index < 0 || index >= arr->size) return 0; 
 	arr->size--;
