@@ -5,11 +5,11 @@ typedef struct array {
 } Array;
 
 
-Array* criar(); 
+Array* create(); 
 
-int remover(Array* arr, int index); 
+void pushback(Array* arr, int data); 
 
-void inserir(Array* arr, int data); 
+int pop(Array* arr, int index); 
 
 int set(Array *arr, int index, int value);
 
@@ -17,7 +17,7 @@ int get(Array* arr, int index);
 
 int size(Array* arr); 
 
-void mostrar(Array* arr); 
+void show(Array* arr); 
 
-void realocar(Array* arr); 
+void resize(Array* arr); 
 

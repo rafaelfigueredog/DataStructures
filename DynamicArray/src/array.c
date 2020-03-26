@@ -4,7 +4,7 @@
 
 #define MAX 100
 
-Array* criar () {
+Array* create() {
 	Array* arr = (Array*) malloc(sizeof(Array));
 	arr->size = 0;
 	arr->max = 10;
@@ -12,7 +12,7 @@ Array* criar () {
 	return arr; 
 }
 
-int remover(Array* arr, int index) {
+int pop(Array* arr, int index) {
 	if (arr->size == 0) return 0; 
 	if ( index < 0 || index >= arr->size) return 0; 
 	arr->size--;
@@ -22,8 +22,8 @@ int remover(Array* arr, int index) {
 	return 1; 
 }
 
-void inserir(Array* arr, int data) {
-	if (arr->size == arr->max) realocar(arr);
+void pushback(Array* arr, int data) {
+	if (arr->size == arr->max) resize(arr);
 	arr->v[arr->size] = data; 
 	arr->size++;
 }
@@ -44,12 +44,12 @@ int get(Array* arr, int index) {
 	else return -1; 
 }
 
-void realocar(Array* arr) { 
+void resize(Array* arr) { 
 	arr->max *= 2; 
 	arr->v = (int*) realloc(arr->v, arr->max*sizeof(int)); 
 }
 
-void mostrar(Array* array) {
+void show(Array* array) {
 	printf("[ "); 
 	for (int i = 0; i < array->size; i++) {
 		printf("%d ", get(array, i)); 

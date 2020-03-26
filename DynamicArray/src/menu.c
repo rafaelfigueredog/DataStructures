@@ -4,7 +4,7 @@
 
 void menuArray() {
 
-    Array* array = NULL; 
+    Array* array = create(); 
     int option; 
     int i, keep; 
     int v; 
@@ -13,14 +13,14 @@ void menuArray() {
 
     while (keep) {
 
-        printf("\n\t\t Menu Array\n\n"); 
-        printf("1. Criar Array\n");
-        printf("2. Inserir Elemento\n");
-        printf("3. Remover Elemento\n");
-        printf("4. Consultar Elemento\n");
-        printf("5. Mostrar Array\n");
-        printf("6. Tamanho do Array\n");
-        printf("0. Sair\n");
+        printf("\n\t\tArray\n\n"); 
+        printf("1. PushBack\n");
+        printf("2. Set\n");
+        printf("3. Remove\n");
+        printf("4. Get\n");
+        printf("5. Show\n");
+        printf("6. Size\n");
+        printf("0. Exit\n");
      
 
         while (1) {
@@ -37,18 +37,20 @@ void menuArray() {
             break; 
         
         case 1: 
-            if (array == NULL) array = criar(); 
+            printf("\nNumber: ");
+            scanf("%d", &v); 
+            pushback(array, v); 
+            
             break;
         case 2: 
-            printf("\nElemento: ");
-            scanf("%d", &v); 
-            inserir(array, v); 
-            
+            printf("\nindex and value: ");
+            scanf("%d %d", &i, &v); 
+            printf("\n%d\n", set(array, i, v)); 
             break;
         case 3: 
             printf("\nindex: "); 
             scanf("%d", &i); 
-            remover(array, i); 
+            pop(array, i); 
             break;
         case 4: 
             printf("index: ");
@@ -56,12 +58,11 @@ void menuArray() {
             printf("\n%d\n", get(array, i));  
             break;
         case 5: 
-            mostrar(array); 
+            show(array); 
             break;
         case 6: 
             printf("\nSize: %d\n", size(array)); 
             break;
-        
         
         default:
             break;
