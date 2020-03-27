@@ -19,7 +19,7 @@ $ cd DataStructures/DynamicArray/
 $ chmod u+r+x run.sh 
 ~~~
 
-4. Execute o comando abaixo sempre que fizer alterações o quiser executar o programa; 
+4. Execute o comando abaixo sempre que fizer alterações ou quiser executar o programa; 
 ~~~console
 $ ./run.sh 
 ~~~
