@@ -8,7 +8,8 @@ Para ultilizar esse repositório no linux basta seguir as instruções:
 $ git clone https://github.com/rafaelfigueredog/DataStructures.git
 ~~~
 
-2. Acesse o diretório diretório da estura de dado desejada, por exemplo:
+2. Acesse o diretório da estrutura de dados desejada, 
+por exemplo:
 
 ~~~console
 $ cd DataStructures/DynamicArray/
