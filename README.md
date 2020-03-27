@@ -1,4 +1,4 @@
-# Estrutura de Dados e Algoritimos
+# Estrutura de Dados e Algoritmos
 
 Para ultilizar esse repositório no linux basta seguir as instruções:
 
