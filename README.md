@@ -1,4 +1,31 @@
+# Data Structures
+
 # Data Structures 
+
+Para ultilizar esse repositório no linux basta seguir as instruções:
+
+1. clone o repositório. 
+
+~~~console
+$ git clone https://github.com/rafaelfigueredog/DataStructures.git
+~~~
+
+2. Acesse o diretório diretório da estura de dado desejada, por exemplo:
+
+~~~console
+$ cd DataStructures/DynamicArray/
+~~~
+
+3. Execute o seguinte comando apenas uma vez;  
+~~~console
+$ chmod u+r+x run.sh 
+~~~
+
+4. Execute o comando abaixo sempre que fizer alterações o quiser executar o programa; 
+~~~console
+$ ./run.sh 
+~~~
+
 
 - Dynamic Array Interface
 ~~~ C 
