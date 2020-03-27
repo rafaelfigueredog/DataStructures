@@ -1,6 +1,4 @@
-# Data Structures
-
-# Data Structures 
+# Estrutura de Dados e Algoritimos
 
 Para ultilizar esse repositório no linux basta seguir as instruções:
 
@@ -62,4 +60,29 @@ int top(stack *stk, int *number);   // return the top of stack
 int empty(stack *stk);              // return a bool
 int size(stack *stk);               // return size of stack
 void resize(stack *stk);            // change max size of stack
+~~~
+
+- SinglyLinkedList Interface
+
+~~~C
+typedef struct node Node; 
+typedef struct linkedlist List; 
+
+struct node {
+    int data; 
+    Node *next; 
+};
+
+struct linkedlist  {
+    Node *head; 
+};
+
+List* create(); 
+Node* pushback(Node *head, int data); 
+Node* pushfront(Node *head, int data); 
+Node* removeback(Node *head); 
+Node* removefront(Node *head); 
+int size(Node *head); 
+int empty(Node *head); 
+void show(Node *head); 
 ~~~
