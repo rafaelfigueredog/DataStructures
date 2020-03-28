@@ -43,10 +43,7 @@ int size(Array* arr);                       // return size of array
 void show(Array* arr);                      // print the array
 void resize(Array* arr);                    // change max size of array
 ~~~
-
-
-- Stack (Based in Array Implementation) Interface
-
+- Stack Interface (Based in Array Implementation)
 ~~~ C 
 typedef struct stack {
     int size;
@@ -86,4 +83,24 @@ Node* removefront(Node *head);
 int size(Node *head); 
 int empty(Node *head); 
 void show(Node *head); 
+~~~
+- Queue Interface (Based in Linked List) 
+~~~C
+typedef struct node Node; 
+typedef struct queue Queue; 
+
+struct node {
+    int data; 
+    Node* next; 
+};
+
+struct queue {
+    Node* head; 
+    Node* tail; 
+};
+
+Queue* create(); 
+void enqueue(Queue *queue, int data); 
+int dequeue(Queue *queue, int* number); 
+int empty(Queue *queue); 
 ~~~
