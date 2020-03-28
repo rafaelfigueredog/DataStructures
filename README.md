@@ -1,4 +1,30 @@
-# Data Structures 
+# Estrutura de Dados e Algoritmos
+
+Para ultilizar esse repositório no linux basta seguir as instruções:
+
+1. clone o repositório. 
+
+~~~console
+$ git clone https://github.com/rafaelfigueredog/DataStructures.git
+~~~
+
+2. Acesse o diretório da estrutura de dados desejada, 
+por exemplo:
+
+~~~console
+$ cd DataStructures/DynamicArray/
+~~~
+
+3. Execute o seguinte comando apenas uma vez;  
+~~~console
+$ chmod u+r+x run.sh 
+~~~
+
+4. Execute o comando abaixo sempre que fizer alterações ou quiser executar o programa; 
+~~~console
+$ ./run.sh 
+~~~
+
 
 - Dynamic Array Interface
 ~~~ C 
@@ -35,4 +61,29 @@ int top(stack *stk, int *number);   // return the top of stack
 int empty(stack *stk);              // return a bool
 int size(stack *stk);               // return size of stack
 void resize(stack *stk);            // change max size of stack
+~~~
+
+- SinglyLinkedList Interface
+
+~~~C
+typedef struct node Node; 
+typedef struct linkedlist List; 
+
+struct node {
+    int data; 
+    Node *next; 
+};
+
+struct linkedlist  {
+    Node *head; 
+};
+
+List* create(); 
+Node* pushback(Node *head, int data); 
+Node* pushfront(Node *head, int data); 
+Node* removeback(Node *head); 
+Node* removefront(Node *head); 
+int size(Node *head); 
+int empty(Node *head); 
+void show(Node *head); 
 ~~~
