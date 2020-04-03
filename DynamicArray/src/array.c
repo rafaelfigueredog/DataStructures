@@ -16,6 +16,7 @@ int init(Array** array) {
 }
 
 int erase(Array* arr, int index) {
+	if ( !arr ) return 0;
 	if (arr->size == 0) return 0; 	
 	if ( index < 0 || index >= arr->size) return 0; 
 	arr->size--;
@@ -63,10 +64,10 @@ int get(Array* arr, int *value, int index) {
 }
 
 int resize(Array* arr) { 
-	if (!arr) return 0; // evita erro segmentation fault
+	if (!arr) return 0; 
 	arr->max *= 2; 
 	arr->v = (int*) realloc(arr->v, arr->max*sizeof(int));
-	if ( !arr->v ) return 0; // não foi possível realocar
+	if ( !arr->v ) return 0; 
 	return 1; 
 }
 
