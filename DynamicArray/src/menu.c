@@ -4,7 +4,10 @@
 
 void menuArray() {
 
-    Array* array = create(); 
+    Array *array = NULL;
+
+    create( &array );
+
     int option; 
     int i, keep; 
     int v; 
@@ -24,10 +27,10 @@ void menuArray() {
      
 
         while (1) {
-            printf("\nDigite: ");
+            printf("\nType: ");
             scanf("%d", &option);
             if (option >= 0 && option <= 6) break; 
-            else  printf("\nOpção Invalida\n");
+            else  printf("\nError: Invalid Option\n");
         }
         
         switch (option) {
@@ -39,29 +42,51 @@ void menuArray() {
         case 1: 
             printf("\nNumber: ");
             scanf("%d", &v); 
-            pushback(array, v); 
-            
+            if ( pushback(array, v) ) {
+                printf("\nSuccess!\n"); 
+            } else {
+                printf("\nFailed!\n");
+            }
+
             break;
         case 2: 
-            printf("\nindex and value: ");
+            printf("\nIndex and Value: ");
             scanf("%d %d", &i, &v); 
-            printf("\n%d\n", set(array, i, v)); 
+            if ( set(array, v, i) ) {
+                printf("\nSuccess!\n"); 
+            } else {
+                printf("\nNot Found!\n");
+            }
+            
             break;
         case 3: 
-            printf("\nindex: "); 
-            scanf("%d", &i); 
-            erase(array, i); 
+            printf("\nIndex: ");
+            scanf("%d", &i);
+
+            if ( erase(array, i) ) {
+                printf("\nSuccess!\n");
+            } else {
+                printf("\nFailed!\n");
+            }
+
+
             break;
         case 4: 
-            printf("index: ");
-            scanf("%d", &i); 
-            printf("\n%d\n", get(array, i));  
+            printf("Index: ");
+            scanf("%d", &i);
+            if ( get(array, &v, i)  ) {
+                printf("\nSuccess!\n");
+                printf("\narray[%d] = %d\n", i, v);
+            } else {
+                printf("\nNot Found!\n");
+            }
+
             break;
         case 5: 
-            show(array); 
+            show(array);
             break;
         case 6: 
-            printf("\nSize: %d\n", size(array)); 
+            printf("\nSize: %d\n", size(array));
             break;
         
         default:
