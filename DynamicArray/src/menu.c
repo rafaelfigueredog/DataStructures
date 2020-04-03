@@ -6,7 +6,7 @@ void menuArray() {
 
     Array *array = NULL;
 
-    create( &array );
+    init( &array );
 
     int option; 
     int i, keep; 

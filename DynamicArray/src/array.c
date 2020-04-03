@@ -4,7 +4,7 @@
 
 #define MAX 100
 
-int create(Array** array) {
+int init(Array** array) {
     Array* arr = (Array*) malloc(sizeof(Array));
 	if ( !arr ) return 0;
     arr->size = 0;
@@ -26,9 +26,7 @@ int erase(Array* arr, int index) {
 }
 
 int pushback(Array* arr, int value) {
-
     if (!arr) return 0;
-
 	if (arr->size == arr->max) {
 		if ( resize(arr) ) {
 			arr->v[arr->size] = value; 
@@ -43,16 +41,19 @@ int pushback(Array* arr, int value) {
 
 
 int set(Array* arr, int value, int index ) { 
+	if (!arr) return 0; 
 	if ( index < 0 || index >= arr->size ) return 0; 
 	arr->v[index] = value; 
 	return 1;
 } 
 
 int size(Array* arr) {
+	if (!arr) return 0; 
 	return arr->size;
 }
 
 int get(Array* arr, int *value, int index) {
+	if (!arr) return 0; 
 	if (index >= 0 && index < arr->size) {
 		*value = arr->v[index]; 
 		return 1; 
@@ -62,19 +63,22 @@ int get(Array* arr, int *value, int index) {
 }
 
 int resize(Array* arr) { 
+	if (!arr) return 0; // evita erro segmentation fault
 	arr->max *= 2; 
 	arr->v = (int*) realloc(arr->v, arr->max*sizeof(int));
-	if ( !arr->v ) return 0; 
+	if ( !arr->v ) return 0; // não foi possível realocar
 	return 1; 
 }
 
-void show(Array* array) {
+int show(Array* arr) {
+	if (!arr) return 0; 
 	printf("[ "); 
-	for (int i = 0; i < array->size; i++) {
+	for (int i = 0; i < arr->size; i++) {
 		int v;
-		get(array, &v, i); 
+		get(arr, &v, i); 
 		printf("%d ", v); 
 	}
 	printf("]\n"); 
+	return 1; 
 } 
 

@@ -5,7 +5,7 @@ typedef struct array {
 } Array;
 
 
-int create(Array** arr);
+int init(Array** arr);
 
 int pushback(Array* arr, int value); 
 
@@ -19,4 +19,4 @@ int size(Array* arr);
 
 int resize(Array* arr); 
 
-void show(Array* arr); 
+int show(Array* arr); 
