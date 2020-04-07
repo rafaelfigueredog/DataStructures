@@ -5,9 +5,9 @@ typedef struct stack {
 } stack ; 
 
 
-stack* create();
+int create(stack **stk);
 
-void push(stack *stk, int number); 
+int push(stack *stk, int number); 
 
 int pop(stack *stk, int *number); 
 
@@ -17,4 +17,6 @@ int empty(stack *stk);
 
 int size(stack *stk); 
 
-void resize(stack *stk); 
+int resize(stack *stk); 
+
+void show(stack *stk); 
