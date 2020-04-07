@@ -23,13 +23,14 @@ void menuArray() {
         printf("4. Get\n");
         printf("5. Show\n");
         printf("6. Size\n");
+        printf("7. Capacity\n"); 
         printf("0. Exit\n");
      
 
         while (1) {
             printf("\nType: ");
             scanf("%d", &option);
-            if (option >= 0 && option <= 6) break; 
+            if (option >= 0 && option <= 7) break; 
             else  printf("\nError: Invalid Option\n");
         }
         
@@ -86,8 +87,11 @@ void menuArray() {
             show(array);
             break;
         case 6: 
-            printf("\nSize: %d\n", size(array));
+            printf("\nSize: %d\n", getSize(array));
             break;
+        case 7:
+            printf("\nCapacity: %d\n", getCapacity(array));
+            break; 
         
         default:
             break;

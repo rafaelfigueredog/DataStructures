@@ -26,81 +26,16 @@ $ ./run.sh
 ~~~
 
 
-- Dynamic Array Interface
-~~~ C 
-typedef struct array {
-	int size;
-	int max;
-	int *v;
-} Array;
+- Estruturas Disponíveis
 
-Array* create();                            // init. array
-void pushback(Array* arr, int data);        // add a value at final of aray
-int erase(Array* arr, int index);           // remove a value by index
-int set(Array *arr, int index, int value);  // change a value by index
-int get(Array* arr, int index);             // access a value by index
-int size(Array* arr);                       // return size of array
-void show(Array* arr);                      // print the array
-void resize(Array* arr);                    // change max size of array
-~~~
-- Stack Interface (Based in Array Implementation)
-~~~ C 
-typedef struct stack {
-    int size;
-    int max; 
-    int *stack; 
-} stack ; 
+    - Array Dinâmico <img src="https://github.com/rafaelfigueredog/CodeJam/blob/master/img/check.svg" width="2%">
+    - Lista Encadeada <img src="https://github.com/rafaelfigueredog/CodeJam/blob/master/img/check.svg" width="2%">
+    - Fila <img src="https://github.com/rafaelfigueredog/CodeJam/blob/master/img/check.svg" width="2%">
+    - Pilha <img src="https://github.com/rafaelfigueredog/CodeJam/blob/master/img/check.svg" width="2%">
 
-stack* create();                    // init. stack
-void push(stack *stk, int number);  // add a value 
-int pop(stack *stk, int *number);   // remove the top of stack
-int top(stack *stk, int *number);   // return the top of stack
-int empty(stack *stk);              // return a bool
-int size(stack *stk);               // return size of stack
-void resize(stack *stk);            // change max size of stack
-~~~
+- A serem implementados.
 
-- SinglyLinkedList Interface
-
-~~~C
-typedef struct node Node; 
-typedef struct linkedlist List; 
-
-struct node {
-    int data; 
-    Node *next; 
-};
-
-struct linkedlist  {
-    Node *head; 
-};
-
-List* create(); 
-Node* pushback(Node *head, int data); 
-Node* pushfront(Node *head, int data); 
-Node* removeback(Node *head); 
-Node* removefront(Node *head); 
-int size(Node *head); 
-int empty(Node *head); 
-void show(Node *head); 
-~~~
-- Queue Interface (Based in Linked List) 
-~~~C
-typedef struct node Node; 
-typedef struct queue Queue; 
-
-struct node {
-    int data; 
-    Node* next; 
-};
-
-struct queue {
-    Node* head; 
-    Node* tail; 
-};
-
-Queue* create(); 
-void enqueue(Queue *queue, int data); 
-int dequeue(Queue *queue, int* number); 
-int empty(Queue *queue); 
-~~~
+    - Árvore 
+    - Arvore Binária
+    - Fila de Prioridade
+    - HashTable 

@@ -15,7 +15,9 @@ int set(Array* arr, int value, int index);
 
 int get(Array* arr, int *value, int index);
 
-int size(Array* arr); 
+int getSize(Array* arr); 
+
+int getCapacity(Array* arr); 
 
 int resize(Array* arr); 
 

@@ -18,13 +18,16 @@ void enqueue(Queue *queue, int data) {
     newNode->next = NULL;
 
     // insert a node at back of linked list.
-    if (queue->tail == NULL) {
+
+    if (queue->tail == NULL) {    // the queue is empty
         queue->head = newNode;
         queue->tail = newNode; 
-    } else {
-        queue->tail->next = newNode; 
-        queue->tail = newNode; 
+        return; 
     }
+    
+    // the queue isn't empty
+    queue->tail->next = newNode; 
+    queue->tail = newNode; 
       
 }
 
@@ -34,6 +37,7 @@ int dequeue(Queue *queue, int* number) {
         number = NULL; 
         return 0; 
     }
+    
     Node* nodeToDelete = queue->head; 
     *number = nodeToDelete->data;  
     queue->head = nodeToDelete->next; 
