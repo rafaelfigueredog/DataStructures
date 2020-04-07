@@ -2,56 +2,67 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-List* create() {
+int create(List **linkedlist) {
     List *list = (List*) malloc(sizeof(List)); 
-    list->head = NULL;   
-    return list; 
+    if (!list) return 0;
+    list->head = NULL;  
+    *linkedlist = list; 
+    return 1; 
 }
 
-Node* pushback(Node *head, int data) {
-    if (head == NULL) {
-        Node *newNode = (Node*) malloc(sizeof(Node)); 
-        newNode->data = data; 
-        newNode->next = NULL; 
-        head = newNode; 
-    } else {
-        head->next = pushback(head->next, data); 
-    }
-    return head; 
-}
-
-Node* pushfront(Node *head, int data) {
+int pushback(Node **head, int data) {
     Node *newNode = (Node*) malloc(sizeof(Node)); 
+    if (!newNode) return 0;
     newNode->data = data; 
-    newNode->next = head;
-    head = newNode; 
-    return head;
+    newNode->next = NULL; 
+    while (*head) {
+        head = &((*head))->next; 
+    }
+    newNode->data = data; 
+    newNode->next = NULL; 
+    *head = newNode; 
+    return 1; 
+}
+
+int pushfront(Node **head, int data) {
+    Node *newNode = (Node*) malloc(sizeof(Node)); 
+    if (!newNode) return 0;
+    newNode->data = data; 
+    newNode->next = *head;
+    *head = newNode; 
+    return 1;
 } 
 
-Node* removeback(Node *head) {
-    
-    // empty list
-    if (head == NULL) return NULL; 
+int removeback(Node **head) {
+    // Lista Vazia
+    if ( empty(*head) ) return 0;  
 
-    // last value of list
-    if (head->next == NULL) {
-        free(head); 
-        return NULL; 
-    } 
-    
-    // return Null from the last value of list.
-    head->next = removeback(head->next);
-    return head; 
+    Node* toDelete; 
+
+    // There is just one node. 
+    if ( (*head)->next == NULL ) {
+        toDelete = *head; 
+        *head = NULL;
+        free(toDelete);  
+        return 1; 
+    }
+
+    // other cases; 
+    Node* it = *head;  
+    while (it->next->next) it = it->next; 
+    toDelete = it->next; 
+    it->next = NULL; 
+    free(toDelete); 
+    return 1; 
 }
 
 
-Node* removefront(Node* head) {
-    if (head == NULL) return head; 
-    else {
-        Node* newHead = head->next;  
-        free(head); 
-        return newHead; 
-    }
+int removefront(Node **head) {
+    if ( empty(*head) ) return 0; 
+    Node* toDelete = (*head);  
+    *head = toDelete->next;
+    free(toDelete); 
+    return 1; 
 } 
 
 
@@ -61,7 +72,7 @@ int size(Node *head) {
 }
 
 void show(Node *head) {
-    if (head != NULL) {
+    if (head) {
         printf("%d ", head->data); 
         show(head->next); 
     }

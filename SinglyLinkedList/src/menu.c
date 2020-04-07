@@ -4,7 +4,10 @@
 
 void menuLinkedList() {
 
-    List* list = create(); 
+    List* list;  
+    
+    create(&list);  
+
     int option, keep, v;  
     
     keep = 1; 
@@ -37,18 +40,32 @@ void menuLinkedList() {
         case 1: 
             printf("\nNumber: ");
             scanf("%d", &v); 
-            list->head = pushback(list->head, v); 
+            if (pushback(&list->head, v) ) {
+                printf("\nSuccess!\n");
+            } else {
+                printf("\nFailed!\n");
+            }
             break;
         case 2: 
-            /* printf("\nNumber: "); */
+            printf("\nNumber: ");
             scanf("%d", &v); 
-            list->head = pushfront(list->head, v); 
+            if (pushfront(&list->head, v) ) {
+                printf("\nSuccess!\n");
+            } else {
+                printf("\nFailed!\n");
+            }
             break;
         case 3: 
-            list->head = removeback(list->head); 
+            if ( removeback(&list->head)  ) { 
+                printf("\nSuccess!\n");
+            } else {
+                printf("\nList Empty!\n");
+            }
+            
             break;
         case 4:
-            list->head = removefront(list->head);               
+            if ( removefront(&list->head) ) printf("\nSuccess!\n");  
+            else printf("\nList Empty!\n");            
             break;
         case 5: 
             printf("\n[ ");

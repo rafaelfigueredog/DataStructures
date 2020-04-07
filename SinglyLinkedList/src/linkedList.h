@@ -12,15 +12,15 @@ struct linkedlist  {
 };
 
 
-List* create(); 
+int create();  
 
-Node* pushback(Node *head, int data); 
+int pushback(Node **head, int data); 
 
-Node* pushfront(Node *head, int data); 
+int pushfront(Node **head, int data); 
 
-Node* removeback(Node *head); 
+int removeback(Node **head); 
 
-Node* removefront(Node *head); 
+int removefront(Node **head); 
 
 int size(Node *head); 
 
