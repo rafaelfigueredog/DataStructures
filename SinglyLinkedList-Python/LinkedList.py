@@ -46,6 +46,4 @@ class ListaEncadeada:
         # reverse() => Deve imprimir a lista em ordem reversa 
 
 
-    
-
             
