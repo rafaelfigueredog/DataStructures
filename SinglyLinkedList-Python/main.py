@@ -1,16 +1,15 @@
-from LinkedList import ListaEncadeada
+from LinkedList import LinkedList
 
-Lista = ListaEncadeada()
+lis = LinkedList()
 
 
 for i in range(20): 
+    lis.addFront(i)
 
-    if (i % 2 == 0):
-        Lista.addFront(i)
 
-    else:
-        Lista.addBack(i)
+print(lis.front())
 
-    print(Lista, 'Front:' + str(Lista.front()), 'Back: ' + str(Lista.back()))
 
+
+print(lis)
 
