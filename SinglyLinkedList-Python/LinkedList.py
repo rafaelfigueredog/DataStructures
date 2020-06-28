@@ -1,7 +1,8 @@
 class No:
-  def __init__(self, dado=None, proximo=None):
+
+  def __init__(self, dado=0, prox=None):
     self.dado = dado
-    self.proximo = proximo
+    self.prox = prox
 
   def __str__(self):
     return str(self.dado)
@@ -10,28 +11,25 @@ class No:
 class ListaEncadeada:
 
     def __init__(self):
-        self.head = None
-        self.tail = None
-        self.len = 0
+        self.__head = None
+        self.__tail = None
+        self.__size = 0
 
-    def add(self, dado):
-        novoNo = No(dado)
-        novoNo.proximo = self.head
-        self.head = novoNo
-
-        if (self.tail == None):
-            self.tail = novoNo
-
-        self.len += 1
+    def addFront(self, dado):
+        novoNo = No(dado, self.__head)
+        self.__head = novoNo
+        if (self.__tail == None):
+            self.__tail = novoNo
+        self.__size += 1
     
 
     def __str__(self):
         # retorno deve ser uma string:
         s = "["
-        No = self.head
+        No = self.__head
         while No:
-            s += str(No.dado) + ' ' if No.proximo != None else str(No.dado)
-            No = No.proximo
+            s += str(No.dado) + ' ' if No.prox != None else str(No.dado)
+            No = No.prox
         return s + "]"
 
     
@@ -46,4 +44,64 @@ class ListaEncadeada:
         # reverse() => Deve imprimir a lista em ordem reversa 
 
 
-    
+    def __recPop(self, no, i, index):
+        if (i == index-1):
+
+            if (index == self.size() - 1):
+                self.__tail = no
+
+            try:
+                no.prox = no.prox.prox; 
+            except AttributeError:
+                no.prox  = None
+            
+        else: 
+            self.__recPop(no.prox, i+1, index)
+
+        
+    def pop(self, index=0):
+
+        if (index < 0 or index >= self.__size or self.__size == 0):
+            return
+
+        if (index == 0):
+            try:
+                self.__head = self.__head.prox
+            except AttributeError:
+                self.__head  = None
+                self.__tail  = None
+            
+        else:
+            self.__recPop(self.__head, 0, index)
+        
+        self.__size -= 1
+                
+    def front(self):
+        return self.__head.dado
+
+    def back(self):
+        return self.__tail.dado
+
+    def addBack(self, dado):
+        novoNo = No(dado)
+        self.__tail.prox = novoNo
+        self.__tail = novoNo
+        if (self.__head == None):
+            self.__head = novoNo
+        self.__size += 1
+
+    def empty(self):
+        return self.__size == 0
+
+    def size(self):
+        return self.__size
+
+    def __recursiveReverse(self, No):
+        if No == None : return
+        self.__recursiveReverse(No.prox)
+        print(No, end=' ') if self.__head != No else print(No, end='')
+
+    def reverse(self):
+        print('[', end='')
+        self.__recursiveReverse(self.__head)
+        print(']')
