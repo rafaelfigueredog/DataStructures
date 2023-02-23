@@ -1,0 +1,21 @@
+[submodule "StaticArrayInC"]
+	path = StaticArrayInC
+	url = https://github.com/rafaelfigueredog/StaticArrayInC.git
+[submodule "DynamicArrayInC"]
+	path = DynamicArrayInC
+	url = https://github.com/rafaelfigueredog/DynamicArrayInC.git
+[submodule "HashTableInC"]
+	path = HashTableInC
+	url = https://github.com/rafaelfigueredog/HashTableInC.git
+[submodule "QueueInC"]
+	path = QueueInC
+	url = https://github.com/rafaelfigueredog/QueueInC.git
+[submodule "StackInC"]
+	path = StackInC
+	url = https://github.com/rafaelfigueredog/StackInC.git
+[submodule "LinkedListInC"]
+	path = LinkedListInC
+	url = https://github.com/rafaelfigueredog/LinkedListInC.git
+[submodule "Bitmap"]
+	path = Bitmap
+	url = https://github.com/rafaelfigueredog/Bitmap.git
