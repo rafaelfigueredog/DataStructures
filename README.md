@@ -1,41 +1,21 @@
-# Estrutura de Dados e Algoritmos
+## Data Structures in C
+This repository contains a collection of data structures implemented in C language. The data structures included in this repository are:
 
-Para ultilizar esse repositório no linux basta seguir as instruções:
+- Static Array
+- Dynamic Array
+- Queues
+- Stacks
+- Hash Tables
+- Linked List
+- BitMap
 
-1. clone o repositório. 
+Each data structure has its own submodule, and the implementation code is provided in the respective folders.
 
-~~~console
-$ git clone https://github.com/rafaelfigueredog/DataStructures.git
-~~~
+## Usage
+To use a data structure implementation in your C project, you can clone the respective submodule of this repository into your machine.
 
-2. Acesse o diretório da estrutura de dados desejada, 
-por exemplo:
+## Contributing
+Contributions to this repository are welcome. If you have implemented a new data structure or have improved an existing implementation, feel free to submit a pull request.
 
-~~~console
-$ cd DataStructures/DynamicArray/
-~~~
-
-3. Execute o seguinte comando apenas uma vez;  
-~~~console
-$ chmod u+r+x run.sh 
-~~~
-
-4. Execute o comando abaixo sempre que fizer alterações ou quiser executar o programa; 
-~~~console
-$ ./run.sh 
-~~~
-
-
-- Estruturas Disponíveis
-
-    - Array Dinâmico <img src="https://github.com/rafaelfigueredog/CodeJam/blob/master/img/check.svg" width="2%">
-    - Lista Encadeada <img src="https://github.com/rafaelfigueredog/CodeJam/blob/master/img/check.svg" width="2%">
-    - Fila <img src="https://github.com/rafaelfigueredog/CodeJam/blob/master/img/check.svg" width="2%">
-    - Pilha <img src="https://github.com/rafaelfigueredog/CodeJam/blob/master/img/check.svg" width="2%">
-
-- A serem implementados.
-
-    - Árvore 
-    - Arvore Binária
-    - Fila de Prioridade
-    - HashTable 
+## License
+The code in this repository is licensed under the MIT License.
